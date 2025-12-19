@@ -17,14 +17,14 @@ A complete task manager application built with vanilla JavaScript, HTML, and CSS
 - Git & GitHub for version control
 
 ## Project Structure
-C:.
+```C:.
 ├── index.html
 ├── styles.css
 ├── js
 │ ├── app.js
 │ ├── storage.js
 │ └── taskService.js
-└── README.md
+└── README.md```
 
 ## Purpose
 This project is part of a professional development journey to become a full-stack JavaScript developer and secure international job opportunities. It showcases attention to clean code, modularity, and real-world project management.
