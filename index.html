@@ -29,7 +29,8 @@
   </div>
   <div class="task-manager">
     <article class="todo">
-      <select class="select-status" name="status">
+      <div class="todo-wrapper">
+        <select class="select-status" name="status">
           <option class="todo_status-todo" value="todo" style="background-color:#f8d7da;">To Do</option>
           <option class="todo_status-progress" value="in-progress" style="background-color:#fff3cd;">In Progress</option>
           <option class="todo_status-done" value="done" style="background-color:#d4edda;">Done</option>
@@ -38,31 +39,76 @@
       <div class="todo-button">
         <button type="button" class="delete-todo">delete</button>
       </div>
-    </article>
-    <article class="todo">
-      <select class="select-status" name="status">
-          <option value="todo" style="background-color:#f8d7da;">To Do</option>
-          <option value="in-progress" style="background-color:#fff3cd;">In Progress</option>
-          <option value="done" style="background-color:#d4edda;">Done</option>
-        </select>
-      <div class="todo-data">learn js</div>
-      <div class="todo-button">
-        <button type="button" class="delete-todo">delete</button>
       </div>
-    </article>
-    <article class="todo">
-      <select class="select-status" name="status">
-          <option value="todo" style="background-color:#f8d7da;">To Do</option>
-          <option value="in-progress" style="background-color:#fff3cd;">In Progress</option>
-          <option value="done" style="background-color:#d4edda;">Done</option>
-        </select>
-      <div class="todo-data">learn js</div>
-      <div class="todo-button">
-        <button type="button" class="delete-todo">delete</button>
-      </div>
-    </article>
-  </div>
+            <p class="todo_show-details">details: i want learn java script and learn react after 2 month</p>
+            <div class="todo_showdate-wrapper">
+              <p class="todo_show-startdate">end: 2025-12-08</p>
+              <p class="todo_show-enddate">start: 2025-12-16</p>
+            </div>
 
+    </article>
+    <article class="todo">
+      <div class="todo-wrapper">
+        <select class="select-status" name="status">
+          <option class="todo_status-todo" value="todo" style="background-color:#f8d7da;">To Do</option>
+          <option class="todo_status-progress" value="in-progress" style="background-color:#fff3cd;">In Progress</option>
+          <option class="todo_status-done" value="done" style="background-color:#d4edda;">Done</option>
+        </select>
+      <div class="todo-data">learn js</div>
+      <div class="todo-button">
+        <button type="button" class="delete-todo">delete</button>
+      </div>
+      </div>
+            <p class="todo_show-details">details: i want learn java script and learn react after 2 month</p>
+            <div class="todo_showdate-wrapper">
+              <p class="todo_show-startdate">start: 2025-12-08</p>
+              <p class="todo_show-enddate">end: 2025-12-16</p>
+            </div>
+
+    </article>
+    <article class="todo">
+      <div class="todo-wrapper">
+        <select class="select-status" name="status">
+          <option class="todo_status-todo" value="todo" style="background-color:#f8d7da;">To Do</option>
+          <option class="todo_status-progress" value="in-progress" style="background-color:#fff3cd;">In Progress</option>
+          <option class="todo_status-done" value="done" style="background-color:#d4edda;">Done</option>
+        </select>
+      <div class="todo-data">learn js</div>
+      <div class="todo-button">
+        <button type="button" class="delete-todo">delete</button>
+      </div>
+      </div>
+            <p class="todo_show-details">details: i want learn java script and learn react after 2 month</p>
+            <div class="todo_showdate-wrapper">
+              <p class="todo_show-startdate">end: 2025-12-08</p>
+              <p class="todo_show-enddate">start: 2025-12-16</p>
+            </div>
+
+    </article>
+
+    <div class="details-wrapper hidden">
+      <h2 class="todo-caption">what task</h2>
+      <textarea name="todo-description" id="" class="todo-description" placeholder="Enter detailed description..."></textarea>
+      <p class="todo-details"></p>
+      <div class="date-wrapper">
+        <div class="start-wrapper">
+          <label class="date-start-label" for="date-start">data start</label>
+          <input id="date-start" type="date" class="date-start">
+        </div>
+        <div class="end-wrapper">
+          <label class="date-end-label" for="date-end">data end</label>
+          <input id="date-end" type="date" class="date-end">
+        </div>
+      </div>
+      <div class="set-btn">
+        <button type="button" class="set-details">set details</button>
+        <button type="button" class="cancel-details">cancel details</button>
+      </div>
+    </div>
+      
+    
+    </div>
+    
 
   <script src="/js/app.js"></script>
   <script src="/js/storage.js"></script>
