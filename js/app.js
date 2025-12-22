@@ -92,9 +92,9 @@ addTask.addEventListener("click" , function(){
   articleButton.append(articleButtonBtn)
   todoWrapper.append(articleButton)
   article.append(todoWrapper)
-  article.append(todoShowDetails)
   todo_showDateWrapper.append(todoShowStatDate)
   todo_showDateWrapper.append(todoShowEndDate)
+  article.append(todoShowDetails)
   article.append(todo_showDateWrapper)
  
 
@@ -220,7 +220,10 @@ const todoShowEnddate = todoArticle.querySelector(".todo_show-enddate");
   todoShowEnddate.textContent  = `end : ${dateEndValue}`
 
   todoData.insertAdjacentElement("afterend", todoShowDetails);
-  todoArticle.appendChild(todoShowDetails);
+  // todoArticle.appendChild(todoShowDetails);
+  
+  todoArticle.insertBefore(todoShowDetails, todoArticle.querySelector(".todo_showdate-wrapper")
+);
 
   detailsWrapper.classList.add("hidden");
 });

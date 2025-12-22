@@ -44,7 +44,19 @@ table {
 
 body{
   font-family: "poppins";
+  box-sizing: border-box;
+  background: radial-gradient(circle at top, #1e1e2f, #0f0f14);
+  color: #fff;
+  min-height: 100vh;
 }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
 
 .modal{
   position: fixed;
@@ -65,12 +77,12 @@ body{
 }
 .modal_card{
   background-color: #fff;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  /* height: 300px; */
   border-radius: 10px;
   text-align: center;
 }
-span svg{
+.modal_card span svg{
   width: 100px;
   height: 100px;
   color: green;
@@ -79,49 +91,85 @@ span svg{
 .caption-card{
   font-size: 24px;
   font-weight: bold;
-  
+  margin-bottom: 30px;
+  color: #0f0f14;
+
 }
-.inter-task{
+.field{
+  position: relative;
+  width: 280px;
+  margin: 30px auto;
+
+}
+.field input {
   width: 90%;
-  height: 30px;
-  margin: 20px auto;
+  padding: 18px 12px ;
+  border: 2px solid #aaa;
+  font-size: 16px;
+  border-radius: 6px;
+  outline: none;
+  background: transparent;
+}
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+ transform: translateY(-50%) ;
+ background: transparent;
+ padding: 0 6px;
+ color: #777;
+ pointer-events: none;
+ transition: 0.25s ease; 
+}
+.field input:not(:placeholder-shown) + label{
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #1976d2;
+  padding: 0 6px;
+  background-color: white;
+}
+
+.field input:focus {
+  border-color: #1976d2;
 }
 .modal-btn{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 90%; */
+  width: 90%;
+  margin: 10px auto 40px auto;
   
   
 }
 
 .add-task{
-  padding: 10px 15px;
+  padding: 15px 20px;
   border-radius: 10px;
   background-color: greenyellow;
   border: none;
   margin-left: 15px;
+  font-size: 18px;
 
 }
 .cancel{
-  padding: 10px 15px;
+  padding: 15px 20px;
   border-radius: 10px;
   background-color: tomato;
   margin-right: 15px;
   border: none;
+  font-size: 18px;
 }
 .new-task{
   width: 1000px;
-  height: max-content;
-  margin: 50px auto 0 auto;
-  /* background-color: black; */
+  height: 50px;
+  margin: 50px auto 30px auto;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   border-radius: 10px;
-  padding-bottom: 20px;
 }
 .add{
   padding: 10px 15px;
@@ -131,6 +179,11 @@ span svg{
   color: white;
   font-size: 20px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.add:hover{
+  scale: calc(1.3);
+  margin-left: 10px;
 }
 .all{
   padding: 10px 15px;
@@ -152,8 +205,7 @@ span svg{
   flex-direction: column;
   border-radius: 10px;
   padding-bottom: 20px;
-  background:
-  /* linear-gradient(#ff00ff ,#0000ff ) */
+  
 }
 .todo{
   flex-direction: row-reverse;
@@ -161,18 +213,20 @@ span svg{
   justify-content: space-between;
   width: 95%;
   height: max-content;
-  background-color: rgba(51, 49, 49, 0.9);
-  /* background:
-  linear-gradient(#ff00ff ,#0000ff ) ; */
-  
-  backdrop-filter: blur(50px);
-  /* background-position: center;
-  background-size: cover; */
   box-shadow: 0 3px 4px 0 #F48FB1;
   margin: 10px auto;
-  border-radius: 10px;
   transition: all 0.2s ease-in-out ;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: transform .3s ease, box-shadow .3s ease;
 }
+.todo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
 .todo-wrapper{
   display: flex;
   flex-direction: row-reverse;
@@ -180,7 +234,6 @@ span svg{
   justify-content: space-between;
   width: 95%;
   height: max-content;
-  /* background-color: rgba(51, 49, 49, 0.479); */
   margin: 10px auto;
   border-radius: 10px;
   /* transition: all 0.2s ease-in-out ; */
