@@ -17,8 +17,8 @@
       </span>
       <p class="caption-card">what task</p>
       <div class="field">
-        <input type="text" id="username" required placeholder=" " autofocus>
-        <label class="" for="username">add task</label>
+        <input class="add-task-input" type="text" id="username" required placeholder=" " autofocus>
+        <label class="input-value" for="username">add task</label>
       </div>
       <div class="modal-btn">
         <button type="button" class="add-task">add task</button>
@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="new-task">
-    <button class="add" type="button">add task</button>
+    <button class="add" type="button">new task</button>
     <button class="all" type="button"> < all </button>
   </div>
   <div class="task-manager">
@@ -91,7 +91,12 @@
 
     <div class="details-wrapper hidden">
       <h2 class="todo-caption">what task</h2>
-      <textarea name="todo-description" id="" class="todo-description" placeholder="Enter detailed description..."></textarea>
+      <!-- <textarea name="todo-description" id="" class="todo-description" placeholder="Enter detailed description..." autofocus></textarea> -->
+
+        <div class="textarea_wrapper">
+          <textarea name="todo-description" id="textarea" class="todo-description" placeholder=" " autofocus></textarea>
+          <label for="textarea">Enter detailed description</label>
+        </div>
       <p class="todo-details"></p>
       <div class="date-wrapper">
         <div class="start-wrapper">

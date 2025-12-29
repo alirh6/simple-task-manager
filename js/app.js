@@ -73,6 +73,7 @@ addTask.addEventListener("click" , function(){
 
   const todoShowDetails = document.createElement("p")
   todoShowDetails.className = "todo_show-details"
+
   const todoShowStatDate = document.createElement("p")
   todoShowStatDate.className = "todo_show-startdate"
   const todoShowEndDate = document.createElement("p")
