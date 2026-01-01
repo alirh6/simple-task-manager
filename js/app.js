@@ -135,13 +135,11 @@ taskManager.addEventListener("click", function (e) {
   todoDescription.className = "todo-description";
   todoDescription.name = "todo-description";
   todoDescription.placeholder = "Enter detailed description...";
-  // console.log(textareaValue);
   
   detailsWrapper.append(todoDescription);
 
   const todoDetails = document.createElement("p");
   todoDetails.className = "todo-details";
-  // todoDetails.textContent = "gsfdgdfgsdfgfdgfdg"
   detailsWrapper.append(todoDetails);
 
   const dateWrapper = document.createElement("div");
@@ -262,4 +260,49 @@ taskManager.addEventListener("click", function (e) {
   }
 });
 
-const a = 30
+
+const menu = document.getElementById('context-menu');
+
+// show custom menu
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+
+  menu.style.display = 'block';
+  menu.style.left = `${e.pageX}px`;
+  menu.style.top = `${e.pageY}px`;
+});
+
+// hide menu on click
+document.addEventListener('click', () => {
+  menu.style.display = 'none';
+});
+
+// hide with ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    menu.style.display = 'none';
+  }
+});
+
+// handle menu actions
+menu.addEventListener('click', (e) => {
+  const action = e.target.dataset.action;
+  if (!action) return;
+
+  switch (action) {
+    case 'edit':
+      alert('edit clicked');
+      break;
+    case 'delete':
+      alert('delete clicked');
+      break;
+    case 'share':
+      alert('share clicked');
+      break;
+    case 'info':
+      alert('info clicked');
+      break;
+  }
+
+  menu.style.display = 'none';
+});

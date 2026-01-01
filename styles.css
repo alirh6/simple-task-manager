@@ -520,3 +520,54 @@ body{
     width: 540px;
   }
 }
+
+body {
+  height: 200vh;
+  font-family: sans-serif;
+}
+
+/* menu box */
+.context-menu {
+  position: absolute;
+  display: none;
+  background: #1f2933;
+  color: #fff;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  z-index: 1000;
+  padding: 10px 15px;
+}
+
+/* menu item */
+.menu_items{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.menu_items span{
+  font-size: 12px;
+  font-weight: 100;
+  color: #9ba6b8;
+}
+.context-menu li {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.context-menu li:hover {
+  background: #374151;
+}
+
+/* divider */
+.context-menu .divider {
+  height: 1px;
+  background: #374151;
+  margin: 6px 0;
+  pointer-events: none;
+}
