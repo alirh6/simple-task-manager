@@ -262,11 +262,14 @@ taskManager.addEventListener("click", function (e) {
 
 
 const menu = document.getElementById('context-menu');
+let clickedElement = null;
 
 // show custom menu
 document.addEventListener('contextmenu', (e) => {
   e.preventDefault();
-
+  clickedElement = document.elementFromPoint(e.clientX, e.clientY);
+  console.log(clickedElement);
+  
   menu.style.display = 'block';
   menu.style.left = `${e.pageX}px`;
   menu.style.top = `${e.pageY}px`;
@@ -284,25 +287,134 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
+
+const infoModal = document.querySelector(".info_modal")
+const infoClose = document.querySelector(".info_close")
+const infoAdd = document.querySelector(".info_add")
+
+
 // handle menu actions
 menu.addEventListener('click', (e) => {
-  const action = e.target.dataset.action;
-  if (!action) return;
+  const item = e.target.closest('[data-action]');
+  if (!item) return;
+
+  const action = item.dataset.action;
 
   switch (action) {
-    case 'edit':
-      alert('edit clicked');
+    case 'open':
+      clickedElement.click();
       break;
+
     case 'delete':
       alert('delete clicked');
       break;
-    case 'share':
-      alert('share clicked');
+
+    case 'new-task':
+      modal.classList.remove("hidden");
       break;
+
+    case 'copy':
+      navigator.clipboard.writeText(clickedElement.textContent);
+      break;
+
     case 'info':
-      alert('info clicked');
+      infoModal.classList.remove("hidden")
       break;
   }
 
   menu.style.display = 'none';
 });
+
+infoClose.addEventListener("click" , function(e){
+  infoModal.classList.add("hidden")
+})
+
+const infoAddQuestion = document.querySelector(".info_add-question")
+const questionModal = document.querySelector(".question_modal")
+const questionCancel = document.querySelector(".question_cancel")
+
+infoAddQuestion.addEventListener("click" , function(e){
+  infoModal.classList.add("hidden")
+  questionModal.classList.remove("hidden")
+})
+questionCancel.addEventListener("click" , function(e){
+  questionModal.classList.add("hidden")
+})
+
+
+//!!!!! test
+
+const captch = document.querySelector(".captch")
+const showCaptcha = document.querySelector(".show_captcha")
+let enterCaptcha = document.querySelector(".enter_captcha")
+const change = document.querySelector(".change")
+const check = document.querySelector(".check")
+const flag = document.querySelector(".flag")
+const flags = document.querySelector(".flags")
+
+let text = "1234567890qwertyuiopasdfghjklzxcvbnm" ;
+let captcha = "";
+let random ;
+
+change.addEventListener("click" , function(e){
+  captcha = ""
+  flags.classList.add("hidden")
+  flag.classList.add("hidden")
+  for(let i = 0 ; i < 5 ; i++ ){
+  random = Math.floor(Math.random() * text.length )
+  captcha += text[random]
+}
+showCaptcha.textContent = captcha
+
+  check.addEventListener("click" , function(e){
+    
+    let value = enterCaptcha.value
+    if(value === captcha){
+      flag.classList.remove("hidden")
+      flags.classList.add("hidden")
+    }else{
+      flags.classList.remove("hidden")
+      flag.classList.add("hidden")
+    }
+    
+  })
+  
+  enterCaptcha.value = ""
+})
+
+  
+
+function a(){
+    
+} 
+
+
+const max = document.querySelector(".max")
+const res = document.querySelector(".res")
+const remain = +max.getAttribute("maxlength")
+
+max.addEventListener("keyup" , function(){
+  res.textContent = remain - max.value.length
+})
+
+
+change.addEventListener("click" , function(e){
+  console.log(e.target.dataset);
+  console.log(e.target.dataset.name);
+  console.log(e.target.dataset.price);
+  let a = e.target.dataset.price;
+  let b = e.target.dataset.name;
+  console.log(typeof a);
+  console.log(typeof b);
+  let c = `${a}${b}`
+  console.log(c);
+  console.log(typeof c);
+  
+  let d = e.target.dataset
+  console.log(d);
+  
+  console.log(typeof d);
+  
+  
+})

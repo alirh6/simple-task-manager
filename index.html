@@ -6,8 +6,63 @@
   <title>Document</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body onload="a()" >
 
+  <!-- test  -->
+
+  <div class="captch">
+    <p class="show_captcha"></p>
+    <p data-price="1000" data-name="ali" class="change">change captcha</p>
+    <input id="value" type="text" class="enter_captcha">
+    <button class="check" type="button">check</button>
+    <p class="flag hidden">true</p>
+    <p class="flags hidden">false</p>
+  </div>
+
+  <div class="length">
+    <input type="text" maxlength="11" class="max">
+    <p class="res">11</p>
+  </div>
+
+
+  <div class="info_modal hidden">
+    <div class="info_card">
+      <p class="info_caption">
+        برای باز شدن inspect از روی کیبرد دکمه f12 رو بزنید
+        <br>
+        اگه باز نشد از ترکیب Fn+F12 استفاده کنید
+      </p>
+      <p class="info_caption">
+        برای ارتباط با پشتیبانی از منوی راست کلیک گزینه content us رو بزنید
+        یا روی همین متن کلیک کنید
+      </p>
+      <p class="info_caption">
+        برای رفتن به سکشن های دیگه و استفاده از بقیه امکانات از دکمه های کیبرد S رو بزنید
+        یا روی همین متن کلیک کنید
+      </p>
+
+      <div class="info_button-wrapper">
+        <button class="info_close">cancel</button>
+        <button class="info_add">add info</button>
+        <button class="info_add-question">ask question?</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question_modal hidden">
+    <div class="question_card">
+      <p class="question_caption"> هر سوالی داری بپرس رفیق خیلی زود بهت جواب میدم</p>
+      <div class="question_box-wrapper">
+        <textarea name="" id="" class="question_box" placeholder="سوالت چیه رفیق جانم"></textarea>
+        <input class="question_email" type="email" name="" id="" placeholder="ایمیل بده سوالتو جواب بدم رفیق">
+      </div>
+
+      <div class="question_button-wrapper">
+        <button class="question_add">add question</button>
+        <button class="question_cancel">cancel</button>
+      </div>
+    </div>
+  </div>
  
 
   <!-- Custom Context Menu -->
@@ -15,10 +70,10 @@
     <li class="menu_items" data-action="open">open
       <span>enter</span>
     </li>
-    <li class="menu_items" data-action="open with">open with
+    <li class="menu_items" data-action="open_with">open with
       <span> > </span>
     </li>
-    <li class="menu_items" data-action="edit"> edit
+    <li class="menu_items" data-action="copy"> copy
       <span>ctrl+E</span>
     </li>
     <li class="menu_items" data-action="new-task"> new task
@@ -147,6 +202,58 @@
       
     
     </div>
+
+    <div class="notepad">
+      <div data-color="" class="notepad_item">
+        <h2 class="notepad_title">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis delectus quibusdam aut asperiores praesentium ad provident deleniti tenetur rerum</h2>
+      <p class="notepad_caption"></p>
+      <span class="notepad_delete">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+        </svg>
+      </span>
+      </div>
+      <div data-color="" class="notepad_item">
+        <h2 class="notepad_title">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis delectus quibusdam aut asperiores praesentium ad provident deleniti tenetur rerum</h2>
+      <p class="notepad_caption"></p>
+      <span class="notepad_delete">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+        </svg>
+      </span>
+      </div>
+      <div data-color="" class="notepad_item">
+        <h2 class="notepad_title">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis delectus quibusdam aut asperiores praesentium ad provident deleniti tenetur rerum</h2>
+      <p class="notepad_caption"></p>
+      <span class="notepad_delete">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+        </svg>
+      </span>
+      </div>
+      <div data-color="" class="notepad_item">
+        <h2 class="notepad_title">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis delectus quibusdam aut asperiores praesentium ad provident deleniti tenetur rerum</h2>
+      <p class="notepad_caption"></p>
+      <span class="notepad_delete">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+        </svg>
+      </span>
+      </div>
+    </div>
+
+    <div class="notepad_modal">
+      <div class="notepad_card">
+        
+      </div>
+    </div>
+
+
+
     
 
   <script src="/js/app.js"></script>
@@ -154,3 +261,5 @@
   <script src="/js/taskService.js"></script>
 </body>
 </html>
+
+
