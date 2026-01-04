@@ -1,4 +1,4 @@
-const modal = document.querySelector(".modal")
+const modal = document.querySelector(".newtask_modal")
 const addTask = document.querySelector(".add-task")
 const taskManagers = document.querySelector(".task-manager")
 const cancel = document.querySelector(".cancel")
@@ -13,17 +13,21 @@ const todoData = document.querySelector(".todo-data")
 
 //! add task modal
 
-add.addEventListener("click" , function(){
-  modal.classList.remove("hidden")
-})
 
-cancel.addEventListener("click" , function(){
+function newTaskModalHidden (){
   modal.classList.add("hidden")
-})
+}
+function newTaskModal (){
+  modal.classList.remove("hidden")
+}
+
+add.addEventListener("click" , newTaskModal)
+
+cancel.addEventListener("click" , newTaskModalHidden)
 
 document.body.addEventListener("keydown" , function(e){
   if (e.key === "Escape"){
-    modal.classList.add("hidden")
+    newTaskModalHidden()
   }
 })
 
@@ -60,7 +64,7 @@ addTask.addEventListener("click" , function(){
   const articleData = document.createElement("div")
   articleData.className = "todo-data"
   articleData.textContent = inputValue
-
+  
   addTaskInput.value = ""
 
   const articleButton = document.createElement("div")
@@ -417,4 +421,81 @@ change.addEventListener("click" , function(e){
   console.log(typeof d);
   
   
+})
+
+//!!!! note modal
+
+const notePad = document.querySelector(".notepad")
+const addNote = document.querySelector(".add_note")
+const notepadModal = document.querySelector(".notepad_modal")
+const notepadArea = document.querySelector(".notepad_area")
+const notepadColors = document.querySelector(".notepad_colors")
+const notepadColor = document.querySelectorAll(".notepad_color")
+const noteAdd = document.querySelector(".note_add")
+const noteCancel = document.querySelector(".note_cancel")
+
+addNote.addEventListener("click" , function(e){
+  notepadModal.classList.remove("hidden")
+})
+
+
+
+
+let chooseColor ;
+notepadColor.forEach(function(color){
+  color.addEventListener("click" , function(e){
+    chooseColor = e.target.dataset.color
+    console.log(chooseColor);
+    
+  })
+})
+
+noteAdd.addEventListener("click" , function(e){
+  let notepadAreaValue = notepadArea.value
+
+  const noteParent = document.createElement("div")
+  noteParent.classList.add("notepad_item")
+  noteParent.style.backgroundColor = chooseColor
+
+  const noteDelete = document.createElement("span")
+  noteDelete.classList.add("notepad_delete")
+
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("xmlns", svgNS);
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("stroke-width", "1.5");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("class", "size-6");
+ 
+  const path = document.createElementNS(svgNS, "path");
+
+  path.setAttribute("stroke-linecap", "round");
+  path.setAttribute("stroke-linejoin", "round");
+  path.setAttribute(
+    "d",
+    "m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+  );
+
+  
+
+  const notepadCaption = document.createElement("p")
+  notepadCaption.classList.add("notepad_caption")
+  notepadCaption.textContent = notepadAreaValue
+
+  noteParent.append(notepadCaption)
+
+  
+  svg.appendChild(path);
+  noteDelete.append(svg)
+  noteParent.append(noteDelete)
+
+  notePad.append(noteParent)
+  notepadModal.classList.add("hidden")
+  
+})
+
+noteCancel.addEventListener("click" , function(){
+  notepadModal.classList.add("hidden")
 })
