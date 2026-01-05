@@ -499,3 +499,45 @@ noteAdd.addEventListener("click" , function(e){
 noteCancel.addEventListener("click" , function(){
   notepadModal.classList.add("hidden")
 })
+
+
+
+const audio = document.querySelector(".audio")
+// const play = document.querySelector(".play")
+const pause = document.querySelector(".pause")
+const time = document.querySelector(".time")
+
+function play(){
+  audio.play()
+}
+function pausee(){
+  audio.pause()
+}
+function show(){
+  setInterval(function(){
+    console.log(`played ${audio.currentTime}`);
+    
+  },1000)
+}
+time.addEventListener("click" , function(){
+  audio.playbackRate = 1
+  console.log(audio.playbackRate);
+  
+})
+function duration(){
+  console.log(audio.duration);
+  
+}
+
+
+
+
+// function show(){
+//   setInterval(function(){
+//     console.log(`played ${audio.currentTime}`);
+    
+//   },1000)
+// }
+// pause.addEventListener("click" , function(){
+//   audio.pause()
+// })
