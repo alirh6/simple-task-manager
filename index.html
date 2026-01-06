@@ -6,17 +6,39 @@
   <title>Document</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body onload="a()" >
+<body class="body" onload="a()" >
 
   <!-- test  -->
 
-  <audio class="audio" src="/Ebi-Behet-Goftam-128(1).mp3" controls></audio>
+  <audio preload="auto" controlslist="nodownload"  class="audio" src="/Ebi-Behet-Goftam-128(1).mp3" controls></audio>
   <button onclick="play()" class="play">play</button>
   <button onclick="pausee()" class="pause">pause</button>
   <button onclick="show()" class="show">show</button>
-  <button  class="time">time</button>
+  <button   class="time">time</button>
   <button onclick="duration()"  class="du">duration</button>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+    <audio  preload="auto" controlslist="nodownload" 
+    class="ebi" src="/Dariush - Az Tou~GuitarMusic.mp3"></audio>
+    <p class="name">ebi</p>
+    <button class="back"> 
+      <  
+    </button>
+    <button class="dahqabl"> -10 </button>
+    <button class="pl">▶️</button>
+    <!-- <button class="es">play</button> -->
+    <button class="jolo">play</button>
+    <button class="dah">+10</button>
+    <button class="for">
+      >
+    </button>
+    <br>
+    <br>
+    <br>
+    <br>
   <div class="captch">
     <p class="show_captcha"></p>
     <p data-price="1000" data-name="ali" class="change">change captcha</p>
@@ -110,8 +132,12 @@
       </span>
       <p class="caption-card">what task</p>
       <div class="field">
-        <input class="add-task-input" type="text" id="username" required placeholder=" " autofocus>
-        <label class="input-value" for="username">add task</label>
+        <input class="add-task-input" 
+        type="text" id="username" 
+        required placeholder=" " 
+        autofocus>
+        <label class="input-value" 
+        for="username">add task</label>
       </div>
       <div class="modal-btn">
         <button type="button" class="add-task">add task</button>

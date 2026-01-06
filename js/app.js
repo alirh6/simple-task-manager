@@ -270,7 +270,7 @@ let clickedElement = null;
 
 // show custom menu
 document.addEventListener('contextmenu', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   clickedElement = document.elementFromPoint(e.clientX, e.clientY);
   console.log(clickedElement);
   
@@ -509,10 +509,16 @@ const time = document.querySelector(".time")
 
 function play(){
   audio.play()
+  // document.body.classList.add("hidden")
 }
 function pausee(){
   audio.pause()
 }
+// function play() {
+//   audio.addEventListener("canplay", () => {
+//     audio.play()
+//   }, { once: true })
+// }
 function show(){
   setInterval(function(){
     console.log(`played ${audio.currentTime}`);
@@ -541,3 +547,96 @@ function duration(){
 // pause.addEventListener("click" , function(){
 //   audio.pause()
 // })
+
+
+const ebi = document.querySelector(".ebi")
+const pl = document.querySelector(".pl")
+const jolo = document.querySelector(".jolo")
+const aqab = document.querySelector(".aqab")
+const dah = document.querySelector(".dah")
+const dahqabl = document.querySelector(".dahqabl")
+const back = document.querySelector(".back")
+const forr = document.querySelector(".for")
+const nam = document.querySelector(".name")
+const musics =[
+  {id : 1 , src: "/Ebi-Behet-Goftam-128(1).mp3" , 
+    singer: "ebi" , name : "goftam"},
+  {id : 2 , src: "/Amir Tataloo - Ajab (Maket).mp3" , 
+    singer: "tataloo" , name : "ajab"},
+  {id : 3 , src: "/Amir Tataloo - Man Bahat Ghahram [320].mp3" , 
+    singer: "tataloo" , name : "qahram"},
+  {id : 4 , src: "/Dariush - Age Ye Rooz~GuitarMusic.mp3" , 
+    singer: "dariush" , name : "age ye roz"},
+  {id: 5 , src: "/Dariush - Az Tou~GuitarMusic.mp3" ,
+    singer : "dariush" , name: "az tou"
+  }
+]
+let nowMusic = 0
+let nowMusic2 = 5
+
+forr.addEventListener("click" , function(){
+  nowMusic++
+  if(nowMusic > 4){
+    nowMusic = 0
+  }
+
+  // ebi.pause()
+  const mainMusic = musics[nowMusic]
+  nam.innerHTML = `${mainMusic.name} - ${mainMusic.singer}`
+  ebi.setAttribute("src" , mainMusic.src)
+  ebi.play()
+})
+back.addEventListener("click", function() {
+  nowMusic--;
+  if (nowMusic < 0) {
+    nowMusic = musics.length - 1; // آخرین موزیک
+  }
+
+  const mainMusic = musics[nowMusic];
+  nam.innerHTML = `${mainMusic.name} - ${mainMusic.singer}`;
+  ebi.setAttribute("src", mainMusic.src);
+  ebi.play();
+});
+
+
+pl.addEventListener("click" , function(){
+  if(ebi.paused){
+    ebi.play()
+    pl.textContent = "⏸"
+  }else if (ebi.played){
+    ebi.pause();
+    pl.textContent = "▶️";
+  }
+})
+
+dah.addEventListener("click" , function(){
+  ebi.currentTime += 10
+  
+})
+dahqabl.addEventListener("click" , function(){
+  ebi.currentTime -= 10
+})
+
+const body = document.querySelector(".body")
+
+body.insertAdjacentHTML("afterend" ,
+  `<article class="todo">
+      <div class="todo-wrapper">
+        <select class="select-status" name="status">
+          <option class="todo_status-todo" value="todo" style="background-color:#f8d7da;">To Do</option>
+          <option class="todo_status-progress" value="in-progress" style="background-color:#fff3cd;">In Progress</option>
+          <option class="todo_status-done" value="done" style="background-color:#d4edda;">Done</option>
+        </select>
+      <div class="todo-data">learn js</div>
+      <div class="todo-button">
+        <button type="button" class="delete-todo">delete</button>
+      </div>
+      </div>
+            <p class="todo_show-details">details: i want learn java script and learn react after 2 month</p>
+            <div class="todo_showdate-wrapper">
+              <p class="todo_show-startdate">start: 2025-12-08</p>
+              <p class="todo_show-enddate">end: 2025-12-16</p>
+            </div>
+
+    </article>`
+)
