@@ -619,24 +619,3 @@ dahqabl.addEventListener("click" , function(){
 
 const body = document.querySelector(".body")
 
-body.insertAdjacentHTML("afterend" ,
-  `<article class="todo">
-      <div class="todo-wrapper">
-        <select class="select-status" name="status">
-          <option class="todo_status-todo" value="todo" style="background-color:#f8d7da;">To Do</option>
-          <option class="todo_status-progress" value="in-progress" style="background-color:#fff3cd;">In Progress</option>
-          <option class="todo_status-done" value="done" style="background-color:#d4edda;">Done</option>
-        </select>
-      <div class="todo-data">learn js</div>
-      <div class="todo-button">
-        <button type="button" class="delete-todo">delete</button>
-      </div>
-      </div>
-            <p class="todo_show-details">details: i want learn java script and learn react after 2 month</p>
-            <div class="todo_showdate-wrapper">
-              <p class="todo_show-startdate">start: 2025-12-08</p>
-              <p class="todo_show-enddate">end: 2025-12-16</p>
-            </div>
-
-    </article>`
-)
